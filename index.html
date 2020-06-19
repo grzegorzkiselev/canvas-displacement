@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>displacement</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.0/pixi.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js">
+    </script>
+
+    <script type="text/javascript">
+        function random(min, max) {
+            var number = min + Math.floor(Math.random() * (max - min));
+            var mapNum = `map${number}.jpg`;
+            return mapNum;
+        };
+        // img1
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelector("body").addEventListener("mousemove", function(){
+
+
+            var tl = new TimelineMax();
+            tl
+             .to (displacementFilter.scale, 1, {y: (Math.random()*500), x: (Math.random()*500)})
+             .to (displacementFilter.scale, 1, {y: 0.1, x: 0.1});
+            });
+
+            // PIXI init stage
+            var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x7070707});
+            document.body.appendChild(renderer.view);
+            var stage = new PIXI.Container();
+            var container = new PIXI.Container();
+            stage.addChild(container);
+
+            // render image
+            var img1 = PIXI.Sprite.fromImage("1.jpg");
+            img1.width = 494.43;
+            img1.height = 370.82;
+            img1.position.x = 152;
+            img1.position.y = 114.59;
+            container.addChild(img1);            
+
+            // add filters
+            // var disSprite = PIXI.Sprite.fromImage("map1.jpg");
+            // disSprite.width = renderer.width;
+            // disSprite.height = renderer.height;
+            // var displacementFilter = new PIXI.filters.
+            //     DisplacementFilter(disSprite);
+            // stage.addChild(disSprite);
+            // container.filters = [displacementFilter];
+
+            var disSprite = PIXI.Sprite.fromImage(random(1, 8));
+
+			  		disSprite.width = renderer.width;
+			  		disSprite.height = renderer.height;
+			  		var displacementFilter = new PIXI.filters.DisplacementFilter(disSprite);
+			  		displacementFilter.scale.set(0.1);
+			  		stage.addChild(disSprite);
+                      container.filters = [displacementFilter];
+                      
+            // var i =0;
+            function draw() {
+                // i++;
+                //disSprite.x +=1;
+                //disSprite.y +=1;
+                renderer.render(stage);
+                window.requestAnimationFrame(draw);
+            }
+
+                draw(); 
+        });
+        // img2
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelector("body").addEventListener("mousemove", function(){
+
+            var tl = new TimelineMax();
+            tl
+             .to (displacementFilter.scale, 1, {y: (Math.random()*500), x: (Math.random()*500)})
+             .to (displacementFilter.scale, 1, {y: 0.1, x: 0.1});
+            // tl
+            //  .to(img2, 1, {alpha: 1},1);
+            // tl
+            //  .fromTo (img2.scale, 1, 
+            //          {y:img2.scale.y},
+            //          {y:img2.scale.y},1)
+
+            });
+
+            // PIXI init stage
+            var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x7070707});
+            document.body.appendChild(renderer.view);
+            var stage = new PIXI.Container();
+            var container = new PIXI.Container();
+            stage.addChild(container);
+
+            // render image
+            var img2 = PIXI.Sprite.fromImage("2.jpg");
+            img2.width = 494.43;
+            img2.height = 370.82;
+            img2.position.x = 152;
+            img2.position.y = 114.59;
+            container.addChild(img2);
+            
+            // var img2 = PIXI.Sprite.fromImage("3.jpg");
+            // img2.width = 494.43;
+            // img2.height = 370.82;
+            // img2.position.x = 152;
+            // img2.position.y = 114.59;
+            // img2.alpha = 0;
+            // container.addChild(img2);
+            
+
+            // add filters
+            // var disSprite = PIXI.Sprite.fromImage("map1.jpg");
+            // disSprite.width = renderer.width;
+            // disSprite.height = renderer.height;
+            // var displacementFilter = new PIXI.filters.
+            //     DisplacementFilter(disSprite);
+            // stage.addChild(disSprite);
+            // container.filters = [displacementFilter];
+
+            var disSprite = PIXI.Sprite.fromImage(random(1, 8));
+
+			  		disSprite.width = renderer.width;
+			  		disSprite.height = renderer.height;
+			  		var displacementFilter = new PIXI.filters.DisplacementFilter(disSprite);
+			  		displacementFilter.scale.set(0.1);
+			  		stage.addChild(disSprite);
+                      container.filters = [displacementFilter];
+                      
+            // var i =0;
+            function draw() {
+                // i++;
+                //disSprite.x +=1;
+                //disSprite.y +=1;
+                renderer.render(stage);
+                window.requestAnimationFrame(draw);
+            }
+
+                draw(); 
+        });
+        // img3
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelector("body").addEventListener("mousemove", function(){
+
+            var tl = new TimelineMax();
+            tl
+             .to (displacementFilter.scale, 1, {y: (Math.random()*500), x: (Math.random()*500)})
+             .to (displacementFilter.scale, 1, {y: 0.1, x: 0.1});
+            });
+
+            // PIXI init stage
+            var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x7070707});
+            document.body.appendChild(renderer.view);
+            var stage = new PIXI.Container();
+            var container = new PIXI.Container();
+            stage.addChild(container);
+
+            // render image
+            var img3 = PIXI.Sprite.fromImage("3.jpg");
+            img3.width = 494.43;
+            img3.height = 370.82;
+            img3.position.x = 152;
+            img3.position.y = 114.59;
+            container.addChild(img3);
+            
+            // add filters
+            // var disSprite = PIXI.Sprite.fromImage("map1.jpg");
+            // disSprite.width = renderer.width;
+            // disSprite.height = renderer.height;
+            // var displacementFilter = new PIXI.filters.
+            //     DisplacementFilter(disSprite);
+            // stage.addChild(disSprite);
+            // container.filters = [displacementFilter];
+
+            var disSprite = PIXI.Sprite.fromImage(random(1, 8));
+
+			  		disSprite.width = renderer.width;
+			  		disSprite.height = renderer.height;
+			  		var displacementFilter = new PIXI.filters.DisplacementFilter(disSprite);
+			  		displacementFilter.scale.set(0.1);
+			  		stage.addChild(disSprite);
+                      container.filters = [displacementFilter];
+                      
+            // var i =0;
+            function draw() {
+                // i++;
+                //disSprite.x +=1;
+                //disSprite.y +=1;
+                renderer.render(stage);
+                window.requestAnimationFrame(draw);
+            }
+
+                draw(); 
+        });
+        // img4
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelector("body").addEventListener("mousemove", function(){
+
+            var tl = new TimelineMax();
+            tl
+             .to (displacementFilter.scale, 1, {y: (Math.random()*500), x: (Math.random()*500)})
+             .to (displacementFilter.scale, 1, {y: 0.1, x: 0.1});
+            });
+
+            // PIXI init stage
+            var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x7070707});
+            document.body.appendChild(renderer.view);
+            var stage = new PIXI.Container();
+            var container = new PIXI.Container();
+            stage.addChild(container);
+
+            // render image
+            var img4 = PIXI.Sprite.fromImage("4.jpg");
+            img4.width = 494.43;
+            img4.height = 370.82;
+            img4.position.x = 152;
+            img4.position.y = 114.59;
+            container.addChild(img4);
+            
+
+            // add filters
+            // var disSprite = PIXI.Sprite.fromImage("map1.jpg");
+            // disSprite.width = renderer.width;
+            // disSprite.height = renderer.height;
+            // var displacementFilter = new PIXI.filters.
+            //     DisplacementFilter(disSprite);
+            // stage.addChild(disSprite);
+            // container.filters = [displacementFilter];
+
+            var disSprite = PIXI.Sprite.fromImage(random(1, 8));
+
+			  		disSprite.width = renderer.width;
+			  		disSprite.height = renderer.height;
+			  		var displacementFilter = new PIXI.filters.DisplacementFilter(disSprite);
+			  		displacementFilter.scale.set(0.1);
+			  		stage.addChild(disSprite);
+                      container.filters = [displacementFilter];
+                      
+            // var i =0;
+            function draw() {
+                // i++;
+                //disSprite.x +=1;
+                //disSprite.y +=1;
+                renderer.render(stage);
+                window.requestAnimationFrame(draw);
+            }
+
+                draw(); 
+        });
+        // img5
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelector("body").addEventListener("mousemove", function(){
+
+            var tl = new TimelineMax();
+            tl
+             .to (displacementFilter.scale, 1, {y: (Math.random()*500), x: (Math.random()*500)})
+             .to (displacementFilter.scale, 1, {y: 0.1, x: 0.1});
+            });
+
+            // PIXI init stage
+            var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x7070707});
+            document.body.appendChild(renderer.view);
+            var stage = new PIXI.Container();
+            var container = new PIXI.Container();
+            stage.addChild(container);
+
+            // render image
+            var img5 = PIXI.Sprite.fromImage("5.jpg");
+            img5.width = 494.43;
+            img5.height = 370.82;
+            img5.position.x = 152;
+            img5.position.y = 114.59;
+            container.addChild(img5);            
+
+            // add filters
+            // var disSprite = PIXI.Sprite.fromImage("map1.jpg");
+            // disSprite.width = renderer.width;
+            // disSprite.height = renderer.height;
+            // var displacementFilter = new PIXI.filters.
+            //     DisplacementFilter(disSprite);
+            // stage.addChild(disSprite);
+            // container.filters = [displacementFilter];
+
+            var disSprite = PIXI.Sprite.fromImage(random(1, 8));
+
+			  		disSprite.width = renderer.width;
+			  		disSprite.height = renderer.height;
+			  		var displacementFilter = new PIXI.filters.DisplacementFilter(disSprite);
+			  		displacementFilter.scale.set(0.1);
+			  		stage.addChild(disSprite);
+                      container.filters = [displacementFilter];
+                      
+            // var i =0;
+            function draw() {
+                // i++;
+                //disSprite.x +=1;
+                //disSprite.y +=1;
+                renderer.render(stage);
+                window.requestAnimationFrame(draw);
+            }
+
+                draw(); 
+        });
+        // img6
+        document.addEventListener("DOMContentLoaded", function() {
+
+            document.querySelector("body").addEventListener("mousemove", function(){
+
+            var tl = new TimelineMax();
+            tl
+             .to (displacementFilter.scale, 1, {y: (Math.random()*500), x: (Math.random()*500)})
+             .to (displacementFilter.scale, 1, {y: 0.1, x: 0.1});
+            });
+
+            // PIXI init stage
+            var renderer = PIXI.autoDetectRenderer(800, 600,{backgroundColor : 0x7070707});
+            document.body.appendChild(renderer.view);
+            var stage = new PIXI.Container();
+            var container = new PIXI.Container();
+            stage.addChild(container);
+
+            // render image
+            var img6 = PIXI.Sprite.fromImage("6.jpg");
+            img6.width = 494.43;
+            img6.height = 370.82;
+            img6.position.x = 152;
+            img6.position.y = 114.59;
+            container.addChild(img6);
+
+            // add filters
+            // var disSprite = PIXI.Sprite.fromImage("map1.jpg");
+            // disSprite.width = renderer.width;
+            // disSprite.height = renderer.height;
+            // var displacementFilter = new PIXI.filters.
+            //     DisplacementFilter(disSprite);
+            // stage.addChild(disSprite);
+            // container.filters = [displacementFilter];
+
+            var disSprite = PIXI.Sprite.fromImage(random(1, 8));
+
+			  		disSprite.width = renderer.width;
+			  		disSprite.height = renderer.height;
+			  		var displacementFilter = new PIXI.filters.DisplacementFilter(disSprite);
+			  		displacementFilter.scale.set(0.1);
+			  		stage.addChild(disSprite);
+                    container.filters = [displacementFilter];
+                      
+            // var i =0;
+            function draw() {
+                // i++;
+                //disSprite.x +=1;
+                //disSprite.y +=1;
+                renderer.render(stage);
+                window.requestAnimationFrame(draw);
+            }
+
+                draw(); 
+        });
+
+
+
+
+    
+    </script>
+    
+</head>
+<body>
+
+</body>
+</html>
